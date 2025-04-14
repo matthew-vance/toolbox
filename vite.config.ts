@@ -1,9 +1,10 @@
 import { svelteTesting } from "@testing-library/svelte/vite";
 import { sveltekit } from "@sveltejs/kit/vite";
+import UnoCss from "unocss/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [sveltekit()],
+  plugins: [UnoCss(), sveltekit()],
   test: {
     workspace: [
       {
