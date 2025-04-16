@@ -17,6 +17,8 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
+      - name: Test
+        run: pnpm run test:unit
       - name: Build
         env:
           BASE_PATH: "/${{ github.event.repository.name }}"

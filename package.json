@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint .",
     "test:unit": "vitest",
-    "test": "npm run test:unit -- --run && npm run test:e2e",
+    "test": "pnpm run test:unit run && pnpm run test:e2e",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/svelte": "^5.2.7",
+    "@testing-library/user-event": "^14.6.1",
     "@unocss/extractor-svelte": "66.1.0-beta.11",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.2",
