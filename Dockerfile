@@ -9,7 +9,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm run build
 
-FROM caddy:2-alpine
-COPY Caddyfile /etc/caddy/Caddyfile
-COPY --from=build /app/build /var/www/html
-EXPOSE 80
+FROM nginx:1.27-alpine-slim
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 8080
