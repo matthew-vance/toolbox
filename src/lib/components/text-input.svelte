@@ -3,4 +3,4 @@
   let { value = $bindable(), ...rest }: HTMLInputAttributes = $props();
 </script>
 
-<input bind:value {...rest} p="y-1 x-3" rounded="md" border="1 black" />
+<input bind:value {...rest} class="py-1 px-3 rounded-md border" />

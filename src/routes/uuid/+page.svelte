@@ -18,11 +18,11 @@
   let uuids = $derived(generateUUIDs());
 </script>
 
-<main prose>
+<main>
   <h1>UUID Generator</h1>
   <p>Generate a list of UUIDs</p>
-  <div flex gap="4" items-end>
-    <div flex flex-col gap="4">
+  <div class="flex gap-4 items-end">
+    <div class="flex flex-col gap-4">
       <label
         >Version:
         <select bind:value={version}>
@@ -35,13 +35,10 @@
     </div>
     <button
       onclick={() => (uuids = generateUUIDs())}
-      border
-      p="y-1 x-3"
-      rounded-md
-      class="hover:bg-gray-100 hover:cursor-pointer">Regenerate</button
+      class="border py-1 px-3 rounded-md hover:bg-gray-100 hover:cursor-pointer">Regenerate</button
     >
   </div>
   {#each uuids as uuid}
-    <p class="not-prose">{uuid}</p>
+    <p>{uuid}</p>
   {/each}
 </main>
