@@ -1,6 +1,6 @@
 <script lang="ts">
   import { v4, v7 } from "uuid";
-  import { TextInput } from "$lib/components";
+  import { TextInput, Button } from "$lib/components";
 
   const uuidVersions = ["v4", "v7"] as const;
   type UUIDVersion = (typeof uuidVersions)[number];
@@ -33,10 +33,7 @@
       </label>
       <label>Quantity: <TextInput type="number" bind:value={quantity} min="1" max="100" /></label>
     </div>
-    <button
-      onclick={() => (uuids = generateUUIDs())}
-      class="border py-1 px-3 rounded-md hover:bg-gray-100 hover:cursor-pointer">Regenerate</button
-    >
+    <Button onclick={() => (uuids = generateUUIDs())}>Regenerate</Button>
   </div>
   {#each uuids as uuid}
     <p>{uuid}</p>
